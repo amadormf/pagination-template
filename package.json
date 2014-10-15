@@ -1,0 +1,20 @@
+{
+  "name": "pagination-template",
+  "version": "0.0.0",
+  "description": "Pagination of results for use in a template",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "pagination",
+    "template",
+    "view"
+  ],
+  "author": "amadormateof",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "chai": "~1.9.2",
+    "chai-as-promised": "~4.1.1"
+  }
+}
