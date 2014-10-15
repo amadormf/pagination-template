@@ -62,6 +62,28 @@ describe('PAGINATION', function() {
 		expect(result[9]).to.have.property('actualPage').with.equal(true);
 		done();
 	});	
+	it('Check decimals for maxPagination results', function(done){
+		pag.pagination('search', 3, 141, 13, {maxPagination:13});
+		var result = pag.getPagination();		
+		for(var i =0; i< result.length; ++i){
+			var index = result[i].index;
+			var strIndex = index.toString();
+			expect(strIndex).not.include('.');			
+		}		
+		done();
+
+	});	
+	it('Check negative number for maxPagination index', function(done){
+		pag.pagination('search', 3, 141, 13, {maxPagination:13});
+		var result = pag.getPagination();
+		console.log(result);		
+		if(result[0].index < 0){
+			done(new Error('Negative number for index'));			
+		}
+		else{
+			done();
+		}					
+	});
 	it('Check first last button', function(done){
 		pag.pagination('search', 15, 150, 10, {showBeginingEnd:true});
 		var result = pag.getPagination();			
@@ -87,8 +109,7 @@ describe('PAGINATION', function() {
 		pag.pagination('search', 15, 150, 10, {domain: domain});
 		var result = pag.getPagination();				
 		//check the length of results
-		expect(result).to.have.length(15);
-		console.log(result);
+		expect(result).to.have.length(15);		
 		//check if the actual pages is marked
 		expect(result[0]).to.have.property('url').with.include(domain);
 		done();
