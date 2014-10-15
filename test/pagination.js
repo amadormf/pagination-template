@@ -63,8 +63,9 @@ describe('PAGINATION', function() {
 		done();
 	});	
 	it('Check decimals for maxPagination results', function(done){
-		pag.pagination('search', 3, 141, 13, {maxPagination:13});
-		var result = pag.getPagination();		
+		pag.pagination('search', 0, 4651, 10, {maxPagination:13, showBeginingEnd:true});
+		var result = pag.getPagination();
+		console.log(result);		
 		for(var i =0; i< result.length; ++i){
 			var index = result[i].index;
 			var strIndex = index.toString();
@@ -75,8 +76,7 @@ describe('PAGINATION', function() {
 	});	
 	it('Check negative number for maxPagination index', function(done){
 		pag.pagination('search', 3, 141, 13, {maxPagination:13});
-		var result = pag.getPagination();
-		console.log(result);		
+		var result = pag.getPagination();			
 		if(result[0].index < 0){
 			done(new Error('Negative number for index'));			
 		}
