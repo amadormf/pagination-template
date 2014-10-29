@@ -1,6 +1,6 @@
 {
   "name": "pagination-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pagination of results for use in a template",
   "main": "index.js",
   "scripts": {
@@ -17,8 +17,8 @@
     "chai": "~1.9.2",
     "chai-as-promised": "~4.1.1"
   },
-  "repository" :
-    { "type" : "git",
-      "url" : "http://github.com/amadormf/pagination-template"
-    }  
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/amadormf/pagination-template"
+  }
 }
