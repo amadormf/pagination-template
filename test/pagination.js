@@ -1,7 +1,7 @@
-var pag = require('../index.js');
+var Pagination = require('../index.js');
 describe('PAGINATION', function() {		
 	it('Check basic pagination', function(done){		
-		pag.pagination('search', 1, 100, 10);
+		var pag = new Pagination('search', 1, 100, 10);
 		var result = pag.getPagination();
 		expect(result).to.be.a('array');
 		//check the length of results
@@ -11,7 +11,7 @@ describe('PAGINATION', function() {
 		done();
 	});
 	it('Check void pagination', function(done){
-		pag.pagination('search', 1, 0, 10);
+		var pag = new Pagination('search', 1, 0, 10);
 		var result = pag.getPagination();		
 		expect(result).to.be.a('array');
 		//check the length of results
@@ -19,14 +19,14 @@ describe('PAGINATION', function() {
 		done();
 	});
 	it('Check basic option maxPagination', function(done){
-		pag.pagination('search', 1, 150, 10, {maxPagination:10});
+		var pag = new Pagination('search', 1, 150, 10, {maxPagination:10});
 		var result = pag.getPagination();		
 		//check the length of results
 		expect(result).to.have.length(10);		
 		done();
 	});
 	it('Check basic option with actual page = 3 maxPagination', function(done){
-		pag.pagination('search', 3, 150, 10, {maxPagination:10});
+		var pag = new Pagination('search', 3, 150, 10, {maxPagination:10});
 		var result = pag.getPagination();		
 		//check the length of results
 		expect(result).to.have.length(10);		
@@ -35,7 +35,7 @@ describe('PAGINATION', function() {
 		done();
 	});	
 	it('Check extended option maxPagination', function(done){
-		pag.pagination('search', 8, 150, 10, {maxPagination:10});
+		var pag = new Pagination('search', 8, 150, 10, {maxPagination:10});
 		var result = pag.getPagination();		
 		//check the length of results		
 		expect(result).to.have.length(10);
@@ -45,7 +45,7 @@ describe('PAGINATION', function() {
 		done();
 	});	
 	it('Check extended option maxPagination, the finish is near', function(done){
-		pag.pagination('search', 14, 150, 10, {maxPagination:10});
+		var pag = new Pagination('search', 14, 150, 10, {maxPagination:10});
 		var result = pag.getPagination();		
 		//check the length of results
 		expect(result).to.have.length(10);
@@ -54,7 +54,7 @@ describe('PAGINATION', function() {
 		done();
 	});	
 	it('Check extended option maxPagination, the finish is here', function(done){
-		pag.pagination('search', 15, 150, 10, {maxPagination:10});
+		var pag = new Pagination('search', 15, 150, 10, {maxPagination:10});
 		var result = pag.getPagination();		
 		//check the length of results
 		expect(result).to.have.length(10);
@@ -63,7 +63,7 @@ describe('PAGINATION', function() {
 		done();
 	});	
 	it('Check decimals for maxPagination results', function(done){
-		pag.pagination('search', 0, 4651, 10, {maxPagination:13, showBeginingEnd:true});
+		var pag = new Pagination('search', 0, 4651, 10, {maxPagination:13, showBeginingEnd:true});
 		var result = pag.getPagination();
 		console.log(result);		
 		for(var i =0; i< result.length; ++i){
@@ -75,7 +75,7 @@ describe('PAGINATION', function() {
 
 	});	
 	it('Check negative number for maxPagination index', function(done){
-		pag.pagination('search', 3, 141, 13, {maxPagination:13});
+		var pag = new Pagination('search', 3, 141, 13, {maxPagination:13});
 		var result = pag.getPagination();			
 		if(result[0].index < 0){
 			done(new Error('Negative number for index'));			
@@ -85,7 +85,7 @@ describe('PAGINATION', function() {
 		}					
 	});
 	it('Check first last button', function(done){
-		pag.pagination('search', 15, 150, 10, {showBeginingEnd:true});
+		var pag = new Pagination('search', 15, 150, 10, {showBeginingEnd:true});
 		var result = pag.getPagination();			
 		//check the length of results
 		expect(result).to.have.length(17);
@@ -95,7 +95,7 @@ describe('PAGINATION', function() {
 		done();
 	});
 	it('Check first last button with maxPagination', function(done){
-		pag.pagination('search', 15, 150, 10, {maxPagination:10, showBeginingEnd:true});
+		var pag = new Pagination('search', 15, 150, 10, {maxPagination:10, showBeginingEnd:true});
 		var result = pag.getPagination();				
 		//check the length of results
 		expect(result).to.have.length(12);
@@ -106,7 +106,7 @@ describe('PAGINATION', function() {
 	});
 	it('Check domain option', function(done){
 		var domain = 'http://www.google.es/';
-		pag.pagination('search', 15, 150, 10, {domain: domain});
+		var pag = new Pagination('search', 15, 150, 10, {domain: domain});
 		var result = pag.getPagination();				
 		//check the length of results
 		expect(result).to.have.length(15);		
@@ -114,8 +114,4 @@ describe('PAGINATION', function() {
 		expect(result[0]).to.have.property('url').with.include(domain);
 		done();
 	});
-
-
-
-
 });
