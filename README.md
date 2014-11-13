@@ -23,3 +23,26 @@ Pagination of results for use in a templates in node.js. With 2 simple lines of 
 
 ##Template
 
+
+##Parameters
+
+You can send optional parameters to the constructor for more customization
+
+Example:
+	
+	var parameters = {
+		maxPagination : 10,  				
+		showBeginingEnd: true,				
+		domain: 'http://www.google.com', 	
+	};
+	var paginator = new pagination('search', 3, 141, 13, parameters);
+
+###maxPagination
+Maximum number of indexes show. If for example we have a 20 pages and the maxPagination  value is 10 the result is and the actual pages is 7 the result is 4 5 6 7 8 9 10 11 12 13
+
+###showBeginingEnd
+Check if they have to show the scroll buttons start end
+
+###domain
+If this options is passed then the url will be the concatenation of domain and the urlOrigin
+
