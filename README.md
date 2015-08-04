@@ -14,7 +14,7 @@ Pagination of results for use in a templates in node.js. With 2 simple lines of 
 	var result = paginator.getPagination();
 
 The value of variable result in this example is:
-	
+
 	[ { url: 'search/1/13',
 	    actualPage: false,
 	    index: 1 },
@@ -48,7 +48,7 @@ The value of variable result in this example is:
 	  { url: 'search/11/13',
 	    actualPage: false,
 	    index: 11 } ]
-	
+
 
 ##Use with Express
 
@@ -65,11 +65,12 @@ The value of variable result in this example is:
 You can send optional parameters to the constructor for more customization
 
 Example:
-	
+
 	var parameters = {
-		maxPagination : 10,  				
-		showBeginingEnd: true,				
-		domain: 'http://www.google.com', 	
+		maxPagination : 10,
+		showBeginingEnd: true,
+		domain: 'http://www.google.com',
+		showPreviousNext: true
 	};
 	var paginator = new pagination('search', 3, 141, 13, parameters);
 
@@ -81,3 +82,6 @@ Check if they have to show the scroll buttons start end
 
 ###domain
 If this options is passed then the url will be the concatenation of domain and the urlOrigin
+
+###showPreviousNext
+Show next previous button
