@@ -1,6 +1,6 @@
 {
   "name": "pagination-template",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Pagination of results for use in a template",
   "main": "index.js",
   "scripts": {
