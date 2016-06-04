@@ -1,6 +1,16 @@
 pagination-template
 ===================
 
+[![NPM version][npm-image]][npm-url]
+[![Build Status](https://travis-ci.org/amadormf/pagination-template.svg?branch=master)](https://travis-ci.org/amadormf/pagination-template)
+[![npm download][download-image]][download-url]
+
+[npm-image]: http://img.shields.io/npm/v/pagination-template.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/pagination-template
+[download-image]: https://img.shields.io/npm/dm/rc-calendar.svg?style=flat-square
+[download-url]: https://npmjs.org/package/rc-calendar
+
+
 Pagination of results for use in a templates in node.js. With 2 simple lines of code generate a pagination object to use in a template.
 
 ##Install
