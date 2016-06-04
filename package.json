@@ -4,7 +4,8 @@
   "description": "Pagination of results for use in a template",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:watch": "mocha -w"
   },
   "keywords": [
     "pagination",
