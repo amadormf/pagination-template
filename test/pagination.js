@@ -1,5 +1,4 @@
 var Pagination = require('../index.js');
-var async = require('async');
 
 describe('Check all the pages of pagination', function(){
 	var numTest = 22;
