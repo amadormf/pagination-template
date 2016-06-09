@@ -19,8 +19,8 @@ Pagination of results for use in a templates in node.js. With 2 simple lines of 
 
 ##Use
 
-	var pagination = require('pagination-template');
-	var paginator = new pagination('search', 3, 141, 13);
+	var Pagination = require('pagination-template');
+	var paginator = new Pagination('search', 3, 141, 13);
 	var result = paginator.getPagination();
 
 The value of variable result in this example is:
@@ -59,16 +59,17 @@ The value of variable result in this example is:
 	    actualPage: false,
 	    index: 11 } ]
 
+The first parameter of constructor is the url path, you can indicate where is the positions of page parameters.
 
-##Use with Express
+Example:
 
-	res.render('index', {
-		pagination : result
-	});
+```
+var paginator = new Pagination('search/anotherparameter/%page%/another/%rowsperpage%', 3, 141, 13);
+var result = paginator.getPagination();
+```
+This return this url:
 
-
-##Template
-
+	url: 'search/anotherparameter/1/another/13'
 
 ##Parameters
 
