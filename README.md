@@ -17,6 +17,14 @@ Pagination of results for use in a templates in node.js. With 2 simple lines of 
 
 	npm install pagination-template
 
+##Parameters
+
+* **urlOrigin**: Set the url pattern
+* **pageAct**: Actual page visit for the user
+* **totalResults**: Number of rows
+* **rowsPerPage**: Rows per page that we will show
+* **options**: Object whith another options
+
 ##Use
 
 	var Pagination = require('pagination-template');
@@ -71,7 +79,7 @@ This return this url:
 
 	url: 'search/anotherparameter/1/another/13'
 
-##Parameters
+##Options
 
 You can send optional parameters to the constructor for more customization
 
