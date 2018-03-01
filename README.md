@@ -67,7 +67,7 @@ The value of variable result in this example is:
 	    actualPage: false,
 	    index: 11 } ]
 
-The first parameter of constructor is the url path, you can indicate where is the positions of page parameters.
+The first parameter of constructor is the url path, you can indicate where is the positions of page parameters, if you send this parameter equal null the return url is a '#'
 
 Example:
 

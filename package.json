@@ -4,8 +4,10 @@
   "description": "Pagination of results for use in a template",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "test:watch": "mocha -w"
+    "test": "mocha",  
+    "test:watch": "mocha -w",
+    "preversion": "yarn lint",
+    "postversion": "git push --follow-tags"
   },
   "keywords": [
     "pagination",

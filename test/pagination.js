@@ -134,4 +134,10 @@ describe('Check the options of pagination', function() {
 		var result = pag.getPagination();
 		expect(result[0]).to.have.property('url').with.equal('/test/1/test1');
 	});
+
+	it('Should return a # url when don\'t send urlPatter', function() {
+		var pag = new Pagination(null, 1, 150, 10);
+		var result = pag.getPagination();
+		expect(result[0]).to.have.property('url').with.equal('#');
+	});
 });
