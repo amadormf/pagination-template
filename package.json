@@ -1,10 +1,10 @@
 {
   "name": "pagination-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Pagination of results for use in a template",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",  
+    "test": "mocha",
     "test:watch": "mocha -w",
     "preversion": "yarn test",
     "postversion": "git push --follow-tags"
